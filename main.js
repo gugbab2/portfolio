@@ -18,6 +18,16 @@ navbarMenu.addEventListener('click', (e) => {
     if(link == null){
         return;
     }
-    const scrollTo = document.querySelector(link);
-    scrollTo.scrollIntoView({behavior:"smooth"});
+    scroll(link);
 });
+
+//contact me 스크롤 이벤트
+const contactMe = document.querySelector('.home__contact');
+contactMe.addEventListener('click', ()=>{
+    scroll('#contant');
+});
+
+function scroll (target) {
+    const scrollTo = document.querySelector(target);
+    scrollTo.scrollIntoView({behavior:"smooth"});
+}
