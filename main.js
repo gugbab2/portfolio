@@ -10,6 +10,11 @@ document.addEventListener("scroll", () => {
     }
 });
 
+function scroll (target) {
+    const scrollTo = document.querySelector(target);
+    scrollTo.scrollIntoView({behavior:"smooth"});
+}
+
 //Navbar 스크롤 이벤트
 const navbarMenu = document.querySelector('.navbar__menu');
 navbarMenu.addEventListener('click', (e) => {
@@ -27,7 +32,10 @@ contactMe.addEventListener('click', ()=>{
     scroll('#contant');
 });
 
-function scroll (target) {
-    const scrollTo = document.querySelector(target);
-    scrollTo.scrollIntoView({behavior:"smooth"});
-}
+//home opacity 이벤트
+const home = document.querySelector('.home__container');
+const height = home.getBoundingClientRect().height;
+document.addEventListener("scroll", () => {
+    home.style.opacity = 1-window.scrollY/height;
+});
+
