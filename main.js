@@ -34,8 +34,21 @@ contactMe.addEventListener('click', ()=>{
 
 //home opacity 이벤트
 const home = document.querySelector('.home__container');
-const height = home.getBoundingClientRect().height;
+const homeheight = home.getBoundingClientRect().height;
 document.addEventListener("scroll", () => {
-    home.style.opacity = 1-window.scrollY/height;
+    home.style.opacity = 1-window.scrollY/homeheight;
+});
+
+//첫번째로 돌아가는 버튼 이벤트
+const arrowUp = document.querySelector('.arrow-up');
+document.addEventListener("scroll", () => {
+    if(window.scrollY > homeheight/2){
+        arrowUp.classList.add('visible');
+    }else{
+        arrowUp.classList.remove('visible');
+    }
+});
+arrowUp.addEventListener('click', () => {
+    scroll('#home');
 });
 
