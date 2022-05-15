@@ -143,6 +143,10 @@ p{
 .home__description{
     color: var(--color-white);
 }
+.home__contact:hover{
+    transition: all var(--animation-duration) ease;
+    background-color: var(--color-dark-green);
+}
 .home__contact{
     color: var(--color-white);
     font-size: var(--font-regular);
@@ -267,6 +271,7 @@ p{
     border-radius: var(--size-border-radius);
     font-size: var(--font-regular);
     padding: 8px 42px;
+    position: relative;
 }
 .category__btn:active,
 .category__btn:hover{
@@ -286,9 +291,9 @@ p{
     height: 24px;
     display: inline-block;
     line-height: 24px;
-    position: relative;
-    top: -20px;
-    left: 20px;
+    position: absolute;
+    top: -10px;
+    right: 8px;
     opacity: 0;
     transition: all var(--animation-duration) ease;
 }
@@ -434,13 +439,21 @@ p{
 }
 /* 반응형 */
 @media screen and (max-width: 768px){
+    :root{
+        /* Font size */
+        --font-large: 30px;
+        --font-medium: 18px;
+        --font-regular: 16px;
+        --font-small: 14px;
+        --font-micro: 12px;
+    }
     .navbar__toggle-btn{
         display: block;
     }
     #navbar {
         flex-direction:column;
         align-items: flex-start;
-        background-color:var(--color-green)
+        background-color:var(--color-green);
     }
     #navbar.navbar--dark{
         padding: 16px;
@@ -454,17 +467,35 @@ p{
     .navbar__menu.open{
         display: block;
     }
+    .navbar__toggle-btn{
+        top: 14px;
+    }
+    .section{
+        padding: 16px;
+        padding-top: 40px;
+    }
     .about__majors{
         flex-direction: column;
+        margin-top: 30px;
+        margin-bottom: 0;
     }
     .major{
-        margin-bottom: 40px;
+        margin-bottom: 30px;
     }
     .skillset{
         flex-direction: column;
     }
+    .category__btn{
+        margin: 4px 0;
+    }
+    .testimonial{
+        flex-direction: column;
+    }
     .testimonial__avatar{
         width: 80px;
-        height: 80px;
+        height: 80px;      
+        margin: 0px auto;
     }
-}
+    .testimonial__speech-bubble{
+        order: 1;
+    }
