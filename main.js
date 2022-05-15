@@ -23,7 +23,14 @@ navbarMenu.addEventListener('click', (e) => {
     if(link == null){
         return;
     }
+    navbarMenu.classList.remove('open');
     scroll(link);
+});
+
+//navbar 반응형 토글
+const navberToggleButton = document.querySelector('.navbar__toggle-btn');
+navberToggleButton.addEventListener('click', () => {
+    navbarMenu.classList.toggle('open');
 });
 
 //contact me 스크롤 이벤트
@@ -60,7 +67,14 @@ workButtonContainer.addEventListener('click', (e)=> {
     const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
     if(filter==null)return;
     projectContainer.classList.add('animation');
-    
+    // 같은 애니매이션을 넣는 타이밍에 따라서 달라진다. 
+    // projects.forEach((ele,idx)=>{
+    //     if(filter === '*' || filter === ele.dataset.type){
+    //         ele.classList.remove('invisible')
+    //     }else{
+    //         ele.classList.add('invisible')
+    //     }
+    // });
     setTimeout(() => {
         projects.forEach((ele,idx)=>{
             if(filter === '*' || filter === ele.dataset.type){
