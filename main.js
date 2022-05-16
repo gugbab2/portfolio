@@ -23,7 +23,7 @@ navbarMenu.addEventListener('click', (e) => {
     if(link == null){
         return;
     }
-    navbarMenu.classList.remove('open');
+    navbarMenu.classList.remove('open');e
     scroll(link);
 });
 

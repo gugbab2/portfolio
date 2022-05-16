@@ -480,6 +480,13 @@ p{
     .navbar__toggle-btn{
         top: 14px;
     }
+    .home__container{
+        display: block;
+    }
+    .home__title,
+    .home__description{
+        margin: 24px 0px;
+    }
     .section{
         padding: 16px;
         padding-top: 40px;
